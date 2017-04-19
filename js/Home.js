@@ -36,10 +36,13 @@ export default class Home extends Component {
   render() {
 
     const { selectedTab } = this.state
+    // let tabBarHeight = 30;
       return (
 
 
-       <Tabs hidesTabTouch>
+       <Tabs
+        //  tabBarStyle={{ height: tabBarHeight}}
+         hidesTabTouch>
     <Tab
       titleStyle={{fontWeight: 'bold', fontSize: 10}}
       selectedTitleStyle={{marginTop: -1, marginBottom: 6,color:'#3C3C3C'}}
@@ -93,7 +96,7 @@ const styles= StyleSheet.create({
         height:15,
     },
     TabBar:{
-      height:10,
+      height:50,
     },
 
     contentContainer: {

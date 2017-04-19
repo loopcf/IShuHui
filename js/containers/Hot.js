@@ -14,6 +14,9 @@ import {
 } from 'react-native';
 import NavigationBar from '../widget/NavigationBar'
 import ScrollableTabView,{ScrollableTabBar,DefaultTabBar} from 'react-native-scrollable-tab-view'
+import Domestic from './Hot/Domestic';
+import ShuHuiComic from './Hot/ShuHuiComic';
+import Passion from './Hot/Passion';
 
 export default class Hot extends Component {
   render() {
@@ -29,9 +32,9 @@ export default class Hot extends Component {
         renderTabBar={() => <DefaultTabBar />}
         ref={(tabView) => { this.tabView = tabView }}
       >
-        <Text tabLabel='鼠绘漫画'>My</Text>
-        <Text tabLabel='热血漫画'>favorite</Text>
-        <Text tabLabel='国产漫画'>project</Text>
+        <ShuHuiComic tabLabel='鼠绘漫画'/>
+        <Passion tabLabel='热血漫画'/>
+        <Domestic tabLabel='国产漫画'/>
 
       </ScrollableTabView>
 
