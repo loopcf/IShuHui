@@ -22,7 +22,6 @@ export const API_SHUHUI_COMIC_LIST = BASE_API + "ComicBooks/GetAllBook?ClassifyI
 
 // 查询章节
 
-export const API_COMBIC_CHAPTER = BASE_API + "ComicBooks/GetChapterList?id=27&PageIndex=0";
 
 //订阅章节
 //参数 isSubscribe true or false  /bookId  /frometype=3
@@ -30,6 +29,6 @@ export const API_SUBSCRIBE = BASE_API+"ComicBooks/Subscribe"
 
 //登录
 //参数 FromType=5  /Email/  Password MD5加密
-export const API_LOGIN = BASE_API + "UserCenter/Login"
+export const API_LOGIN = "http://www.ishuhui.net/UserCenter/Login"
 
 //注册

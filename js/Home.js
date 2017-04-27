@@ -13,7 +13,7 @@ import {
   View
 } from 'react-native';
 import Hot from './containers/Hot';
-import Subscribe from './containers/Subscribe';
+import Login from './containers/Login';
 import Setting from './containers/Setting';
 import Search from './containers/Search';
 import { Tabs, Tab, Icon } from 'react-native-elements'
@@ -51,7 +51,7 @@ export default class Home extends Component {
       renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='home' size={33} />}
       renderSelectedIcon={() => <Icon color={'#3C3C3C'} name='home' size={30} />}
       onPress={() => this.changeTab('hot')}>
-      <Hot />
+      <Hot {...this.props} />
     </Tab>
     <Tab
       titleStyle={{fontWeight: 'bold', fontSize: 10}}
@@ -61,7 +61,7 @@ export default class Home extends Component {
       renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='bookmark' size={33} />}
       renderSelectedIcon={() => <Icon color={'#3C3C3C'} name='bookmark' size={30} />}
       onPress={() => this.changeTab('Subscribe')}>
-      <Subscribe />
+      <Login {...this.props} />
     </Tab>
     <Tab
       titleStyle={{fontWeight: 'bold', fontSize: 10}}
@@ -71,7 +71,7 @@ export default class Home extends Component {
       renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='search' size={33} />}
       renderSelectedIcon={() => <Icon color={'#3C3C3C'} name='search' size={30} />}
       onPress={() => this.changeTab('Search')}>
-      <Search />
+      <Search {...this.props} />
     </Tab>
     <Tab
       titleStyle={{fontWeight: 'bold', fontSize: 10}}
@@ -81,7 +81,7 @@ export default class Home extends Component {
       renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='settings' size={33} />}
       renderSelectedIcon={() => <Icon color={'#3C3C3C'} name='settings' size={30} />}
       onPress={() => this.changeTab('Setting')}>
-      <Setting />
+      <Setting {...this.props} />
     </Tab>
 
   </Tabs>

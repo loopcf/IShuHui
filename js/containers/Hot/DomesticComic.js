@@ -16,22 +16,22 @@ import {
     InteractionManager,
     navigator
 } from 'react-native';
-import { Tile } from 'react-native-elements'
+
+
 import { connect } from 'react-redux';
-import {API_SHUHUI_COMIC_LIST} from '../../common/api';
-import {shuhuiComic} from '../../actions/shuhuiComicAction'
+import {domesticComic} from '../../actions/domesticComicAction'
 import LoadingMoreFooter from '../../widget/LoadingMoreFooter';
 import Chapter from '../Chapter/Chapter';
 import ComicCell from '../../widget/ComicCell'
 
-let PageIndex = 0;
 let isLoading = true;
 let isLoadMore = false;
 let isRefresh = false;
+let PageIndex = 0;
 let isFirstLoad = true;
 
 
-class ShuHuiComic extends Component {
+class DomesticComic extends Component {
 
    constructor(props) {
        super(props);
@@ -44,19 +44,18 @@ class ShuHuiComic extends Component {
 
   componentDidMount() {
         InteractionManager.runAfterInteractions(() => {
-            this.props.shuhuiComic(PageIndex, isLoading, isLoadMore, isRefresh);
+            this.props.domesticComic(PageIndex, isLoading, isLoadMore, isRefresh);
         });
   }
 
   render() {
-      // console.log(this.props.ShuhuiList);
-      if (this.props.ShuhuiList) {
+      if (this.props.DomesticList) {
           isFirstLoad = false;
       }
       return (
           <View style={styles.container}>
              <ListView
-                  dataSource={this.state.dataSource.cloneWithRows(this.props.ShuhuiList)}
+                  dataSource={this.state.dataSource.cloneWithRows(this.props.DomesticList)}
                   style={styles.listview}
                   onEndReachedThreshold={10}
                   enableEmptySections={true}
@@ -84,9 +83,9 @@ class ShuHuiComic extends Component {
       isRefresh = true;
       isLoading = false;
       isLoadMore = false;
-      const {shuhuiComic} = this.props;
+      const {domesticComic} = this.props;
       PageIndex = 0;
-      shuhuiComic(PageIndex, isLoading, isLoadMore, isRefresh);
+      domesticComic(PageIndex, isLoading, isLoadMore, isRefresh);
   }
 
   onEndReach() {
@@ -95,15 +94,15 @@ class ShuHuiComic extends Component {
           isLoadMore = true;
           isRefresh = false;
           isLoading = false;
-          const {shuhuiComic} = this.props;
+          const {domesticComic} = this.props;
           PageIndex = +PageIndex + 1;
-          shuhuiComic(PageIndex, isLoading, isLoadMore, isRefresh);
+          domesticComic(PageIndex, isLoading, isLoadMore, isRefresh);
       }
   }
 
   renderFooter() {
 
-      if (this.props.isLoadMore && this.props.ShuhuiList.length > 0) {
+      if (this.props.isLoadMore && this.props.DomesticList.length > 0) {
           return
               <LoadingMoreFooter />
       }
@@ -118,7 +117,6 @@ class ShuHuiComic extends Component {
         cover:rowData.FrontCover,
         src:rowData.Explain,
         Author:rowData.Author,
-        //  标签sign:
         }
     })
   }
@@ -130,20 +128,52 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
 
+    contentContainer: {
+        flex: 1
+    },
 
     listview: {
         height: Dimensions.get('window').height
     },
 
+    listitem: {
+        alignItems: "center",
+        flexDirection: 'row',
+        borderBottomColor: '#E6E6E6',
+        borderBottomWidth: 0.5
+    },
+
+    itemImage: {
+        margin: 10,
+        width: 105,
+        height: 70,
+        borderRadius: 10
+    },
+    itemTitle: {
+        flex: 1,
+        justifyContent: 'flex-start',
+        flexDirection: 'column',
+    },
+    hintImg: {
+        width: 50,
+        height: 50,
+    },
+    desc: {
+        fontSize: 12,
+        color:'#3C3C3C'
+
+    }
+
 });
 
-export default ShuHuiComic = connect(
+
+export default DomesticComic = connect(
     (state) => {
-      const { ShuhuiList,isLoading,isLoadMore,isRefresh } = state.shuhuiComicReducer;
+      const { DomesticList,isLoading,isLoadMore,isRefresh } = state.domesticComicReducer;
         return {
-          ShuhuiList,
+          DomesticList,
           isLoading,
           isLoadMore,
           isRefresh
         }
-      },{shuhuiComic})(ShuHuiComic);
+      },{domesticComic})(DomesticComic);

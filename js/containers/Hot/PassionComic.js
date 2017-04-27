@@ -18,20 +18,19 @@ import {
 } from 'react-native';
 import { Tile } from 'react-native-elements'
 import { connect } from 'react-redux';
-import {API_SHUHUI_COMIC_LIST} from '../../common/api';
-import {shuhuiComic} from '../../actions/shuhuiComicAction'
+import {passionComic} from '../../actions/passionComicAction'
 import LoadingMoreFooter from '../../widget/LoadingMoreFooter';
 import Chapter from '../Chapter/Chapter';
 import ComicCell from '../../widget/ComicCell'
 
-let PageIndex = 0;
 let isLoading = true;
 let isLoadMore = false;
 let isRefresh = false;
+let PageIndex = 0;
 let isFirstLoad = true;
 
 
-class ShuHuiComic extends Component {
+class PassionComic extends Component {
 
    constructor(props) {
        super(props);
@@ -44,19 +43,18 @@ class ShuHuiComic extends Component {
 
   componentDidMount() {
         InteractionManager.runAfterInteractions(() => {
-            this.props.shuhuiComic(PageIndex, isLoading, isLoadMore, isRefresh);
+            this.props.passionComic(PageIndex, isLoading, isLoadMore, isRefresh);
         });
   }
 
   render() {
-      // console.log(this.props.ShuhuiList);
-      if (this.props.ShuhuiList) {
+      if (this.props.PassionList) {
           isFirstLoad = false;
       }
       return (
           <View style={styles.container}>
              <ListView
-                  dataSource={this.state.dataSource.cloneWithRows(this.props.ShuhuiList)}
+                  dataSource={this.state.dataSource.cloneWithRows(this.props.PassionList)}
                   style={styles.listview}
                   onEndReachedThreshold={10}
                   enableEmptySections={true}
@@ -84,9 +82,9 @@ class ShuHuiComic extends Component {
       isRefresh = true;
       isLoading = false;
       isLoadMore = false;
-      const {shuhuiComic} = this.props;
+      const {passionComic} = this.props;
       PageIndex = 0;
-      shuhuiComic(PageIndex, isLoading, isLoadMore, isRefresh);
+      passionComic(PageIndex, isLoading, isLoadMore, isRefresh);
   }
 
   onEndReach() {
@@ -95,15 +93,15 @@ class ShuHuiComic extends Component {
           isLoadMore = true;
           isRefresh = false;
           isLoading = false;
-          const {shuhuiComic} = this.props;
+          const {passionComic} = this.props;
           PageIndex = +PageIndex + 1;
-          shuhuiComic(PageIndex, isLoading, isLoadMore, isRefresh);
+          passionComic(PageIndex, isLoading, isLoadMore, isRefresh);
       }
   }
 
   renderFooter() {
 
-      if (this.props.isLoadMore && this.props.ShuhuiList.length > 0) {
+      if (this.props.isLoadMore && this.props.PassionList.length > 0) {
           return
               <LoadingMoreFooter />
       }
@@ -118,7 +116,6 @@ class ShuHuiComic extends Component {
         cover:rowData.FrontCover,
         src:rowData.Explain,
         Author:rowData.Author,
-        //  标签sign:
         }
     })
   }
@@ -129,21 +126,18 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F5FCFF',
     },
-
-
     listview: {
         height: Dimensions.get('window').height
     },
-
 });
 
-export default ShuHuiComic = connect(
+export default PassionComic = connect(
     (state) => {
-      const { ShuhuiList,isLoading,isLoadMore,isRefresh } = state.shuhuiComicReducer;
+      const { PassionList,isLoading,isLoadMore,isRefresh } = state.passionComicReducer;
         return {
-          ShuhuiList,
+          PassionList,
           isLoading,
           isLoadMore,
           isRefresh
         }
-      },{shuhuiComic})(ShuHuiComic);
+      },{passionComic})(PassionComic);

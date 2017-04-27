@@ -1,31 +1,32 @@
 import * as types from '../common/actionTypes';
-import {API_SHUHUI_COMIC_LIST} from '../common/api';
 import HttpUtil from '../utils/HttpUtils';
 
-export let shuhuiComic = (PageIndex, isLoading, isLoadMore, isRefresh) => {
+export let chapter = (id,PageIndex, isLoading, isLoadMore, isRefresh) => {
     return dispatch => {
-
-        dispatch(loadShuhuiData(isLoading, isLoadMore, isRefresh));
-        return HttpUtil.fetchGet(API_SHUHUI_COMIC_LIST,
+        let url = "http://www.ishuhui.net/ComicBooks/GetChapterList?id="+id+"&PageIndex="
+        console.log(url);
+        console.log('capter')
+        dispatch(ChapterData(isLoading, isLoadMore, isRefresh));
+        return HttpUtil.fetchGet(url,
             PageIndex,
             (jsonData) => {
                 dispatch({
-                    type: types.GET_SHUHUI_LIST,
-                    ShuhuiList: jsonData.List,
+                    type: types.GET_CHAPTER_LIST,
+                    ChapterList: jsonData.List,
                 });
             },
             (err) => {
                 dispatch({
-                    type: types.GET_SHUHUI_LIST,
-                    ShuhuiList:[]
+                    type: types.GET_CHAPTER_LIST,
+                    ChapterList:[]
                 });
             })
     }
 }
 
-let loadShuhuiData = (isLoading, isLoadMore, isRefresh) => {
+let ChapterData = (isLoading, isLoadMore, isRefresh) => {
     return {
-        type: types.LOAD_SHUHUI_LIST,
+        type: types.LOAD_CHAPTER_LIST,
         isLoading: isLoading,
         isLoadMore: isLoadMore,
         isRefresh: isRefresh
