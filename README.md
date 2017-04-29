@@ -23,7 +23,7 @@ $ react-native run-ios/run-android
 ![subscribe](https://github.com/loopcf/IShuHui/blob/master/screenshot/subscribe.png)
 ![domestic](https://github.com/loopcf/IShuHui/blob/master/screenshot/domestic.png)
 ![Chapter](https://github.com/loopcf/IShuHui/blob/master/screenshot/Chapter.png)
-
+[Android下载](https://fir.im/4p38?release_id=59042eed959d6971bd000077)
 ## 主要第三方库
 
 1. [redux](https://github.com/reactjs/redux)
