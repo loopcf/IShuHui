@@ -1,21 +1,43 @@
-import {
-  AUTH_USER,
-  UNAUTH_USER,
-  AUTH_ERROR,
-  FETCH_MESSAGE
-} from '../common/actionTypes';
+'use strict';
 
-export default function(state = {}, action) {
-  switch(action.type) {
-    case AUTH_USER:
-      return { ...state, error: '', authenticated: true };
-    case UNAUTH_USER:
-      return { ...state, authenticated: false };
-    case AUTH_ERROR:
-      return { ...state, error: action.payload };
-    case FETCH_MESSAGE:
-      return { ...state, message: action.payload };
-  }
+import * as TYPES from '../common/actionTypes';
 
-  return state;
+const initialState = {
+	isLoggedIn: false,
+	status: null,
+};
+
+export default function authReducer(state=initialState, action){
+
+	switch(action.type){
+		case TYPES.LOGGED_DOING:
+			return {
+				...state,
+				status: 'doing'
+			};
+
+		case TYPES.LOGGED_IN:
+			return {
+				...state,
+				isLoggedIn: true,
+				status: 'done'
+			};
+
+		case TYPES.LOGGED_OUT:
+			return {
+				...state,
+				isLoggedIn: false,
+				status: null
+			};
+		case TYPES.LOGGED_ERROR:
+			return {
+				...state,
+				isLoggedIn: false,
+				status: null
+			}
+
+		default:
+			return state;
+	}
+
 }

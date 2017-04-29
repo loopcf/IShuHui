@@ -1,61 +1,50 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  navigator
 } from 'react-native';
 import NavigationBar from '../widget/NavigationBar'
 import { List, ListItem } from 'react-native-elements'
+import mApp from './mApp';
 export default class Setting extends Component {
 
+  onPressApp(){
+    this.props.navigator.push({
+      component:mApp,
+      name:mApp,
+    })
+  }
   render() {
-    let list = [
-      {
-      title: '我的资料',
-      icon: 'face'
-      },
-      {
-      title: '清楚缓存',
-      icon: 'clear-all'
-      },
-      {
-        title:'意见反馈',
-        icon:'email'
-      },
-      {
-        title:'版本号',
-        icon:'android'
-      },
-      {
-        title:'app详情',
-        icon:'dashboard'
-      }
-      ]
     return (
       <View style={styles.container}>
         <NavigationBar
           title={'Setting'}
-
         />
+          <List>
+                <ListItem
+               title="我的资料"
+               leftIcon={{name: 'face'}}
 
-
-        <List>
-          {
-            list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{name: item.icon}}
-              />
-            ))
-          }
+             />
+             <ListItem
+               title="意见反馈"
+               leftIcon={{name: 'email'}}
+             />
+           </List>
+           <List>
+             <ListItem
+               title="版本号"
+               leftIcon={{name: 'android'}}
+             />
+             <ListItem
+               title="app详情"
+               leftIcon={{name: 'dashboard'}}
+               onPress={()=>this.onPressApp()}
+               rightTitle="它能点"
+             />
         </List>
       </View>
     );

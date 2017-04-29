@@ -1,6 +1,3 @@
-/**
- * Created by ljunb on 16/5/25.
- */
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store/store';

@@ -7,16 +7,44 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Icon } from 'react-native-elements'
-export default class ComicCell extends Component{
+export default class SubscribeCell extends Component{
   constructor(props){
     super(props);
+    this.state={
+      isSubscribe:false,
+      IconUri:require('./../../res/images/ic_Subscribe.png')
+    }
   }
+  setSubscribe(isSubscribe){
+    this.setState({
+      isSubscribe:isSubscribe,
+      IconUri:isSubscribe?require('./../../res/images/ic_unSubscribe.png'):require('./../../res/images/ic_Subscribe.png')
+    })
+  }
+  onPressSubscribe(){
+    this.setSubscribe(!this.state.isSubscribe);
+  }
+
   render(){
+    // console.log(this.props);
+    let SubscribeButton=<TouchableOpacity
+      onPress={()=>{this.onPressSubscribe()}}
+      >
+      <Image
+
+        style={{height:22,width:22}}
+      source={this.state.IconUri}
+      />
+
+    </TouchableOpacity>
+
     return(
         <TouchableOpacity
           onPress={this.props.onSelect}
           style={styles.container}
           >
+
+            {/* <TouchableOpacity  onPress={this.onPressRow.bind(this, this.props.data)}> */}
                 <View style={styles.listitem}>
                     <Image source={{ uri: this.props.data.FrontCover }} style={styles.itemImage} >
                     {this.props.data.SerializedState==='已完结' ? <Image source={require('./../../res/images/ic_over.png')}
@@ -29,6 +57,7 @@ export default class ComicCell extends Component{
                                 <Text style={{ fontSize: 18 ,color:'#3C3C3C',  fontWeight: '300',}}>{this.props.data.Title}</Text>
                                 <Text style={{ marginTop: 5,marginBottom: 5,fontSize: 12,color:'#3C3C3C'}}>最新{this.props.data.LastChapter.ChapterNo}话：{this.props.data.LastChapter.Title} </Text>
                             </View>
+                          {SubscribeButton}
 
                         </View>
                         <Text style={styles.desc} numberOfLines={1}>{this.props.data.Explain}</Text>

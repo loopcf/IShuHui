@@ -1,6 +1,3 @@
-/**
- * Created by Jonson
- */
 import React from 'react';
 import {
     StyleSheet,

@@ -1,7 +1,3 @@
-/**
- * ListView Footer
- * Songlcy create by 2017-01-16
- */
 import React, { Component } from 'react';
 
 import {

@@ -15,29 +15,22 @@ import {
 } from 'react-native';
 
 import {
-
     fetchRecommendedList,
     resetState,
     setupSearchText,
-    clearHistory
 } from '../actions/searchAction';
 import { connect } from 'react-redux';
 import SearchHeader from '../widget/SearchHeader';//头文件
 import Chapter from './Chapter/Chapter';
 var height = 40;
 class Search extends React.Component {
-keywordsList
     constructor(props) {
         super(props);
-
-        // this.renderRow = this.renderRow.bind(this);
         this.renderResultRow = this.renderResultRow.bind(this);
-        // this.pushSearchListRow = this.pushSearchListRow.bind(this);
         console.log(this.props)
         this.state = {
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2,
-                // sectionHeaderHasChanged: (section1, section2) => section1 !== section2,
             })
         }
     }
@@ -50,37 +43,18 @@ keywordsList
       this.props.resetState()
     }
 
-    /**
-     *
-     *
-     * @returns
-     *
-     * @memberOf Search
-     */
     render() {
 
-        let sectionIDs = [];
-        let rowIdentifiers = [];
-        let sourceData = null;
-
-
-        //实现页面本页面切换2个页面
         return (
             <View style={{ flex: 1, backgroundColor:  '#EEF0F3', }}>
               <SearchHeader
-                  backAction={() => {
-                      this.props.navigator.pop();
-                  } }
 
                   value={this.props.searchText}
                   onChangeText={(text) => {
-                      // if(text === 'null'){
-                      //     return;
-                      // }
-                      // if(text==='')return;
+
                       this.props.setupSearchText(text)
                       this.props.fetchRecommendedList(text)
-                      // clear();
+
                   } }
                   onEndEditing={this.pushToResultPage.bind(this, this.props.searchText)}
                   />
@@ -106,13 +80,8 @@ keywordsList
             }
             alert('名称不能为空!');
             return;
-
         }
-
-
-
-
-
+        // console.log(this.props);
       this.props.fetchRecommendedList(keyword);
     }
     pushSearchListRow( rowData, rowId){
@@ -148,15 +117,6 @@ keywordsList
             </View>
         </TouchableOpacity>
     }
-
-    /**
-     * 清楚历史记录
-     * @memberOf Search
-     */
-    cleanData() {
-
-    }
-
 }
 
 const styles = StyleSheet.create({
@@ -164,29 +124,6 @@ const styles = StyleSheet.create({
     fonts: {
         fontSize: 18,
 
-    },
-
-    sectionHeader: {
-        height: 44,
-        paddingTop: 20,
-        paddingLeft: 15,
-
-    },
-    sectionHeaderClean: {
-        height: 44,
-        paddingTop: 20,
-        flexDirection: 'row',
-    },
-    sectionHeaderCleanText: {
-        fontSize: 13,
-        color: 'gray',
-        marginLeft: 15,
-    },
-    sectionHeaderCleanImg: {
-
-        marginLeft: Dimensions.get('window').width - 100,
-        height: 15,
-        width: 15,
     },
      listitem: {
           flex:1,
@@ -220,15 +157,13 @@ const styles = StyleSheet.create({
 
 export default Search = connect(
     (state) => {
-      const { keywordsList, searchText,recomdData,history, } = state.searchReducer;
+      const {  searchText,recomdData, } = state.searchReducer;
         return {
-          keywordsList,
           searchText,
           recomdData,
-            history,
         }
       },{
         fetchRecommendedList,
         resetState,
         setupSearchText,
-        clearHistory})(Search);
+        })(Search);

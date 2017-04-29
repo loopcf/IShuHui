@@ -13,19 +13,14 @@ let HttpUtil = {
      */
     fetchGet: (url, params, successCallback, failCallback) => {
         url = url+params
-        console.log(url);
-
         fetch(url)
             .then((response) => {
-              // console.log(response);
               return response.json();
             })
             .then((responseObj) => {
-              // console.log(responseObj);
               successCallback(responseObj.Return)
             })
             .catch((error) => {
-              // console.log(error);
               failCallback(error)
             }).done();
     },

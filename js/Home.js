@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Navigator,
@@ -13,7 +7,7 @@ import {
   View
 } from 'react-native';
 import Hot from './containers/Hot';
-import Login from './containers/Login';
+import Subscribe from './containers/Subscribe';
 import Setting from './containers/Setting';
 import Search from './containers/Search';
 import { Tabs, Tab, Icon } from 'react-native-elements'
@@ -36,12 +30,11 @@ export default class Home extends Component {
   render() {
 
     const { selectedTab } = this.state
-    // let tabBarHeight = 30;
       return (
 
 
        <Tabs
-        //  tabBarStyle={{ height: tabBarHeight}}
+
          hidesTabTouch>
     <Tab
       titleStyle={{fontWeight: 'bold', fontSize: 10}}
@@ -61,7 +54,7 @@ export default class Home extends Component {
       renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='bookmark' size={33} />}
       renderSelectedIcon={() => <Icon color={'#3C3C3C'} name='bookmark' size={30} />}
       onPress={() => this.changeTab('Subscribe')}>
-      <Login {...this.props} />
+      <Subscribe {...this.props} />
     </Tab>
     <Tab
       titleStyle={{fontWeight: 'bold', fontSize: 10}}

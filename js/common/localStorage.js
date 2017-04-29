@@ -1,6 +1,3 @@
-/**
- * Created by ljunb on 16/6/9.
- */
 import { AsyncStorage } from 'react-native';
 
 let localStorage = {

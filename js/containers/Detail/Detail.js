@@ -16,7 +16,7 @@ const uri='http://www.ishuhui.net/ReadComicBooksToIso/';
 export default class Detail extends Component{
   constructor(props){
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.url=uri+this.props.route.params.id ;
     let title=this.props.route.params.name;
     this.state = {
@@ -38,7 +38,7 @@ export default class Detail extends Component{
       url:e.url,
     });
   }
-  
+
   render(){
     return(
       <View style={styles.container} >

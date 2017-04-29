@@ -50,15 +50,11 @@ export default class Welcome extends Component {
           onDoneBtnClick={this.doneBtnHandle}
            onSkipBtnClick={this.onSkipBtnHandle}
         >
-         <View style={[styles.slide,{ backgroundColor: '#fa931d' }]}>
-           <View level={10}><Text style={styles.text}>Page 1</Text></View>
-           <View level={15}><Text style={styles.text}>Page 1</Text></View>
-           <View level={8}><Text style={styles.text}>Page 1</Text></View>
+         <View style={[styles.slide,{ backgroundColor: '#5e6977' }]}>
+             <View level={15}><Text style={styles.text}>this is intro Page 1</Text></View>
          </View>
-         <View style={[styles.slide, { backgroundColor: '#a4b602' }]}>
-           <View level={-10}><Text style={styles.text}>Page 2</Text></View>
-           <View level={5}><Text style={styles.text}>Page 2</Text></View>
-           <View level={20}><Text style={styles.text}>Page 2</Text></View>
+         <View style={[styles.slide, { backgroundColor: '#3C3C3C' }]}>
+           <View level={5}><Text style={styles.text}>this is intro Page 2</Text></View>
          </View>
        </AppIntro>
     );

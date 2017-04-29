@@ -1,6 +1,3 @@
-/**
- * Created by ljunb on 16/5/25.
- */
 import React from 'react';
 import {
     Navigator,

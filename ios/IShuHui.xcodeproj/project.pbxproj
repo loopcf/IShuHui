@@ -47,6 +47,7 @@
 		968D05A6A8F84AC78DD12411 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB102DA1F0884B22B3A0D2BD /* SimpleLineIcons.ttf */; };
 		0CC828A51C6B448BAAA79D5F /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D0AF2F6843444E68D39ADAE /* Zocial.ttf */; };
 		F1E45B77FD6147B6B4E017FB /* libRNCookieManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFE7A8849B04342B4A2A0ED /* libRNCookieManager.a */; };
+		C1073ABF6F3244BF9AA16910 /* libRCTHttpCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21895562F10D4E8B9FFC5E89 /* libRCTHttpCache.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,6 +281,8 @@
 		7D0AF2F6843444E68D39ADAE /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D9ABF7788EA4487A961EC418 /* RNCookieManager.xcodeproj */ = {isa = PBXFileReference; name = "RNCookieManager.xcodeproj"; path = "../node_modules/react-native-cookie/ios/RNCookieManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		5FFE7A8849B04342B4A2A0ED /* libRNCookieManager.a */ = {isa = PBXFileReference; name = "libRNCookieManager.a"; path = "libRNCookieManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		02D6C52E3A3E40B28AD859DA /* RCTHttpCache.xcodeproj */ = {isa = PBXFileReference; name = "RCTHttpCache.xcodeproj"; path = "../node_modules/react-native-http-cache/ios/RCTHttpCache.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		21895562F10D4E8B9FFC5E89 /* libRCTHttpCache.a */ = {isa = PBXFileReference; name = "libRCTHttpCache.a"; path = "libRCTHttpCache.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +311,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				28314647DBB24FCEA37C66B2 /* libRNVectorIcons.a in Frameworks */,
 				F1E45B77FD6147B6B4E017FB /* libRNCookieManager.a in Frameworks */,
+				C1073ABF6F3244BF9AA16910 /* libRCTHttpCache.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +480,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				D911F6EF33FB40C88CE32DF6 /* RNVectorIcons.xcodeproj */,
 				D9ABF7788EA4487A961EC418 /* RNCookieManager.xcodeproj */,
+				02D6C52E3A3E40B28AD859DA /* RCTHttpCache.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1034,11 +1039,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-http-cache\ios\RCTHttpCache",
 				);
 			};
 			name = Debug;
@@ -1061,11 +1068,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-http-cache\ios\RCTHttpCache",
 				);
 			};
 			name = Release;
@@ -1089,6 +1098,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-http-cache\ios\RCTHttpCache",
 				);
 			};
 			name = Debug;
@@ -1111,6 +1121,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-http-cache\ios\RCTHttpCache",
 				);
 			};
 			name = Release;
@@ -1142,11 +1153,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-http-cache\ios\RCTHttpCache",
 				);
 			};
 			name = Debug;
@@ -1178,11 +1191,13 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-cookie\ios",
+					"$(SRCROOT)\..\node_modules\react-native-http-cache\ios\RCTHttpCache",
 				);
 			};
 			name = Release;
@@ -1209,6 +1224,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1233,6 +1249,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

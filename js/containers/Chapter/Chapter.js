@@ -1,7 +1,3 @@
-/**
- * 首页详情
- * Songlcy create by 2017-01-18
- */
 import React, { Component } from 'react';
 import {
     View,

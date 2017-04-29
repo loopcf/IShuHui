@@ -4,7 +4,7 @@ const BASE_API = "http://www.ishuhui.net/";
 
 // 订阅
 
-export const API_SUBSCRIBE_LIST= BASE_API + "ComicBooks/GetSubscribe?fromtype=3";
+export const API_SUBSCRIBE_LIST= BASE_API + "ComicBooks/GetSubscribe?fromtype=2";
 
 // 查询
 
