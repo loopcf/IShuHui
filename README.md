@@ -15,14 +15,7 @@ $ npm install && react-native link
 $ react-native run-ios/run-android
 ```
 ## 运行截图
-![home](https://github.com/loopcf/IShuHui/blob/master/screenshot/home.png)
-![search](https://github.com/loopcf/IShuHui/blob/master/screenshot/search.png)
-![detail](https://github.com/loopcf/IShuHui/blob/master/screenshot/detail.png)
-![login](https://github.com/loopcf/IShuHui/blob/master/screenshot/login.png)
-![setting](https://github.com/loopcf/IShuHui/blob/master/screenshot/setting.png)
-![subscribe](https://github.com/loopcf/IShuHui/blob/master/screenshot/subscribe.png)
-![domestic](https://github.com/loopcf/IShuHui/blob/master/screenshot/domestic.png)
-![Chapter](https://github.com/loopcf/IShuHui/blob/master/screenshot/Chapter.png)
+![home](https://github.com/loopcf/IShuHui/blob/master/screenshot/thegif.gif)
 [Android下载](https://fir.im/4p38?release_id=59042eed959d6971bd000077)
 ## 主要第三方库
 
