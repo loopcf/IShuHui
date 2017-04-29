@@ -31,11 +31,3 @@ let loadShuhuiData = (isLoading, isLoadMore, isRefresh) => {
         isRefresh: isRefresh
     }
 }
-
-// let receiveShuhuiData = (ShuhuiList) => {
-//    console.log('receiveShuhuiData');
-//     return {
-//         type: types.GET_SHUHUI_LIST,
-//         ShuhuiList:ShuhuiList
-//     }
-// }

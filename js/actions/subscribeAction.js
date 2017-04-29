@@ -14,7 +14,7 @@ export let subscribeComic = ( isLoading, isLoadMore, isRefresh) => {
         })
         .then(response=>response.json())
         .then(result=>{
-          console.log(result);
+
           // if(result.ErrCode===""){
           dispatch({
               type: types.GET_SUBSCRIBE_LIST,

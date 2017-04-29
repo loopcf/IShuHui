@@ -5,7 +5,7 @@ import localStorage from '../common/localStorage';
 export let fetchRecommendedList = (keyword)=> {
 
     let URL = 'http://www.ishuhui.net/ComicBooks/GetAllBook?Title='+keyword;
-      console.log(URL);
+
     return dispatch => {
     fetch(URL,{
       method:'POST',
@@ -21,7 +21,7 @@ export let fetchRecommendedList = (keyword)=> {
                     dispatch(RecommendedList(response.Return.List))
                 })
                 .catch((err) => {
-                  
+
                     dispatch(RecommendedList([]))
                 })
     }

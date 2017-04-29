@@ -37,7 +37,7 @@ class Chapter extends Component {
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
         }
-        console.log(this.props);
+    
     }
 
     componentDidMount() {

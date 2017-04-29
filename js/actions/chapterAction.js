@@ -4,8 +4,7 @@ import HttpUtil from '../utils/HttpUtils';
 export let chapter = (id,PageIndex, isLoading, isLoadMore, isRefresh) => {
     return dispatch => {
         let url = "http://www.ishuhui.net/ComicBooks/GetChapterList?id="+id+"&PageIndex="
-        console.log(url);
-        console.log('capter')
+
         dispatch(ChapterData(isLoading, isLoadMore, isRefresh));
         return HttpUtil.fetchGet(url,
             PageIndex,
@@ -32,11 +31,3 @@ let ChapterData = (isLoading, isLoadMore, isRefresh) => {
         isRefresh: isRefresh
     }
 }
-
-// let receiveShuhuiData = (ShuhuiList) => {
-//    console.log('receiveShuhuiData');
-//     return {
-//         type: types.GET_SHUHUI_LIST,
-//         ShuhuiList:ShuhuiList
-//     }
-// }
